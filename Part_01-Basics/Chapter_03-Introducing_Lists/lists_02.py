@@ -33,3 +33,5 @@ print(cars)
 length_of_list = len(cars)
 print(length_of_list)
 
+# reverse index of a List
+print(cars[-1])
