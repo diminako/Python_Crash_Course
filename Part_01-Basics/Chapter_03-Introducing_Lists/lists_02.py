@@ -20,3 +20,16 @@ print(sorted(cars))
 print("Here is the original List again.")
 print(cars)
 
+# reverse() reverses the order of the List permanentally but can be reversed again by calling the action again.
+print("Here is the reversed List")
+cars.reverse()
+print(cars)
+
+print("Here is the original List again.")
+cars.reverse()
+print(cars)
+
+# length of List
+length_of_list = len(cars)
+print(length_of_list)
+
