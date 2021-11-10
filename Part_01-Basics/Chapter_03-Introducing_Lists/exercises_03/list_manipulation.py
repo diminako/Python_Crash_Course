@@ -36,3 +36,6 @@ while (len(friends_list) > 2):
     print(f"Sorry {popped}, you can't eat with us.")
 for i in friends_list:
     print(f"Hell yeah, {i}.  Let's eat.")
+del friends_list[1]
+del friends_list[0]
+print(friends_list)
