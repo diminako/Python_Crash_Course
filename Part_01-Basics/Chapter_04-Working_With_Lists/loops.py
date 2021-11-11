@@ -47,3 +47,6 @@ print(min(digits))
 print(max(digits))
 print(sum(digits))
 
+# List Comprehension generates lists with patterned values
+list_compre = [value**2 for value in range(1,11)]
+print(list_compre)
