@@ -72,7 +72,14 @@ for car in cars[:3]:
 
 # Copying a slice
 my_foods = ["pizza", "torta", "sandwich", "soda", "sub"]
-friends_foods = my_foods[:]
+friends_foods = my_foods[:] # without [:] these lists would not become two separate lists.  Instead friends_foods would keep my_foods values and add onto them no matter what.
 
 print(my_foods)
 print(friends_foods)
+
+my_foods.append("beer")
+friends_foods.append("cocktail")
+
+print(my_foods)
+print(friends_foods)
+

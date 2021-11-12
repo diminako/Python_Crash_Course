@@ -57,3 +57,23 @@ print("---------------")
 cubed_vals = [value**3 for value in range(1,11)]
 print(cubed_vals)
 
+# Exercise 4-10 Slices - make a list and print the first three Items "The first three items are:", print three middle items, and print the last three items.
+new_list = ["ff3", "chrono trigger", "ff5", "tactics", "surfing", "dragoon", "black mage", "panthers"]
+first_three = new_list[:3] # get the first 3 elements starting at default position 0
+print(first_three)
+find_middle = int(len(new_list) / 2 - 1) #find the length and get the middle index
+middle_three = new_list[(find_middle - 1):(find_middle + 2)] # use that variable to get 3 elements
+print(middle_three)
+last_three = new_list[-3:]  # Get the starting variable by index position 3 from reverse till the end.
+print(last_three)
+
+# Exercise 4-11 My Pizzas, Your Pizzas - using 4-1 make a copy of the list of pizzas.  name it friends_pizzas.  Add a pizza to the oiginal list.  add a different pizza to the list friends_pizzas.  prove they are different. print them using for loops
+friends_pizza = pizza[:]
+pizza.append("veggie")
+friends_pizza.append("eggplant")
+for za in pizza:
+    print(za)
+print("---------------")
+for za in friends_pizza:
+    print(za)
+
