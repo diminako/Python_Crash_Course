@@ -50,3 +50,29 @@ print(sum(digits))
 # List Comprehension generates lists with patterned values
 list_compre = [value**2 for value in range(1,11)]
 print(list_compre)
+
+# slicing a list
+# slicing takes two parameters.  list[index you want to start at, the index you want to stop at before reaching.]
+players = ["charles", "martina", "micheal", "florence", "eli"]
+print(players[0:3]) # Starting at index 0 give me players 0, 1, 2 and STOPS before going onto the player at index 3.
+print(players[2:4]) # Starts at index 2 and returns players in position 2 and 3 and stops before 4.
+
+# If you omit the first value the slice will begin at the start of the List
+print(players[:3])
+# To include the rest of a list give the first index and leave the second value out.
+print(players[3:])
+# To print the last 3 players you can use syntax like this
+print(players[-3:])
+
+# Looping through a slice
+cars = ["BMW", "VW", "Porsche", "Volvo", "Dodge", "Toyota", "Hyundai"]
+print("Here are the cars I like.")
+for car in cars[:3]:
+    print(f"I really like {car}")
+
+# Copying a slice
+my_foods = ["pizza", "torta", "sandwich", "soda", "sub"]
+friends_foods = my_foods[:]
+
+print(my_foods)
+print(friends_foods)
