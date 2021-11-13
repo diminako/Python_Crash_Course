@@ -77,3 +77,11 @@ print("---------------")
 for za in friends_pizza:
     print(za)
 
+# Exercise 4-13 Buffet - five foods in a tuple.  use a for loop to print them. try to modify (prompting an error). rewrite the tuple adding two different items. for loop it to print the revised menu.
+food_tuple = ("pizza", "sub", "calzone", "stromboli", "pasta")
+for food in food_tuple:
+    print(f"The restaurant has {food}.")
+# tuple[4] = "hamburger" # will throw an error for trying to change a tuple element.
+new_food_tuple = ("pizza", "sub", "calzone", "pepperoni", "ham")
+for food in new_food_tuple:
+    print(f"The restaurant has {food}.")
