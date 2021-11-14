@@ -56,3 +56,36 @@ if user not in banned_users:
 game_active = True
 can_edit = False
 
+# if Statements
+conditional_test = True
+if conditional_test:
+    print(conditional_test)
+
+age = 19
+if age >= 18:
+    print("You are old enough to vote!")
+
+# if/else statements
+age = 17
+if age >= 18:
+    print("You should go vote!")
+else:
+    print("Grow up.")
+
+# if-elif-else chain
+age = 5
+if age < 4:
+    print("admission is free.")
+elif age < 13:
+    print("young children get a discount")
+else:
+    print("Pay up.")
+
+if age < 4:
+    price = 0
+elif age < 13:
+    price = 10
+else:
+    price = 20
+print(f"Your cost for admission is {price}")
+
