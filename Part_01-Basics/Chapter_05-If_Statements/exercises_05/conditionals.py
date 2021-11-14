@@ -83,3 +83,8 @@ if "apple" in fruits:
     print("Apples are delicious.")
 if "cherry" in fruits:
     print("Cherry pie is awesome.")
+
+# Exercise 5-8 Hello Admin - 
+# Exercise 5-9 No Users -
+# Exercise 5-10 Checking Usernames -
+# Exercise 5-11 Ordinal Numbers - 

@@ -117,3 +117,41 @@ if "extra cheese" in requested_topping:
 
 print("\nFinished making your pizza!")
 
+# Using if Statements with Lists
+# Checking for Special Items
+requested_topping = ["mushrooms", "green peppers", "extra cheese"]
+for requested in requested_topping:
+    print(f"Adding {requested}.")
+print("\nFinished making your pizza.")
+
+for requested in requested_topping:
+    if requested_topping == "green peppers":
+        print(f"Sorry we are out of {requested}")
+    else:
+        print(f"Adding {requested}.")
+print("\nFinished making your pizza.")
+
+# Checking that a list is not empty
+requested_topping = []
+if requested_topping:
+    for requested in requested_topping:
+        print(f"Adding {requested}")
+    print("\nFinished making your pizza!")
+else:
+    print("Are you sure you want a plain pizza?")
+
+
+print(bool([]))  # An array with no elements in it is False
+print(bool(["cool"])) # An array with an element returns True
+print("\n")
+
+# Using multiple Lists
+available_topping = ["mushrooms", "olives", "green peppers", "pepperoni", "pineapple", "extra cheese"]
+requested_topping = ["mushrooms", "french fries", "extra cheese"]
+
+for requested in requested_topping:
+    if requested in available_topping:
+        print(f"Adding {requested} to your pizza.")
+    else:
+        print(f"Sorry we don't have {requested}.")
+print("\nFinished making your pizza.")
