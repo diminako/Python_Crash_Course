@@ -89,3 +89,31 @@ else:
     price = 20
 print(f"Your cost for admission is {price}")
 
+# Multiple elif blocks
+cars = ["bmw", "mercedes", "honda", "toyota", "chevy"]
+
+if "hevy" in cars:
+    print(f"that there's a {cars[-1]}.")
+elif "mw" in cars:
+    print(f"I dunno what that is but it aint no BMW")
+elif "mercedes" in cars:
+    print("neat")
+else:
+    print("word yeah")
+
+# else blocks aren't required.  you can omit an else block if you don't want the program to react.
+if "bmw" not in cars:
+    print("It should be doe")
+
+# Testing Multiple Conditions.
+requested_topping = ["mushrooms", "extra cheese"]
+
+if "mushrooms" in requested_topping:
+    print("adding mushrooms.")
+if "perpperoni" in requested_topping:
+    print("adding pepperoni.")
+if "extra cheese" in requested_topping:
+    print("adding extra cheese.")
+
+print("\nFinished making your pizza!")
+
