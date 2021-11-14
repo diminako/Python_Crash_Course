@@ -84,7 +84,19 @@ if "apple" in fruits:
 if "cherry" in fruits:
     print("Cherry pie is awesome.")
 
-# Exercise 5-8 Hello Admin - 
-# Exercise 5-9 No Users -
-# Exercise 5-10 Checking Usernames -
-# Exercise 5-11 Ordinal Numbers - 
+# Exercise 5-8 Hello Admin - make a list of 5 or more usernames.  include admin. loop thru the list and print a greeting to each user.
+# if the username is "admin" print a special greeting otherwise print a generic greeting including their username.
+
+
+# Exercise 5-9 No Users - Add an if test to make sure the user list isn't empty.  If list is empty print we need Users! remove all
+# users and make sure the test is working correctly.
+
+
+# Exercise 5-10 Checking Usernames - Make sure everyone has a unique username. Make a list of 5 users called current_users.
+# make another list called new_users. Make sure 1 name matches.  loop thru new_users to print that the duplicate will need to make
+# a new username.
+
+
+# Exercise 5-11 Ordinal Numbers - Ordinal Numbers - Ordinal numbers indicate their position in a list, such as 1st or 2nd. Most 
+# ordinal numbers end in th, except 1,2, and 3.  Store numbers 1-9 in a list.  loop through list.  use an if-elif-else chain in the
+# loop to print the proper ending for each number.  each number on a separate line.
