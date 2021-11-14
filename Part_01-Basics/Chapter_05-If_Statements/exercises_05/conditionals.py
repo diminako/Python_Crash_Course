@@ -86,17 +86,47 @@ if "cherry" in fruits:
 
 # Exercise 5-8 Hello Admin - make a list of 5 or more usernames.  include admin. loop thru the list and print a greeting to each user.
 # if the username is "admin" print a special greeting otherwise print a generic greeting including their username.
-
+usernames = ["dimitri", "emily", "john", "admin", "ronnie", "brian"]
+for user in usernames:
+    if user == "admin":
+        print(f"{user.title()}, welcome to the control panel dashboard.")
+    else:
+        print(f"Hello {user}, Thanks for signing in.")
 
 # Exercise 5-9 No Users - Add an if test to make sure the user list isn't empty.  If list is empty print we need Users! remove all
 # users and make sure the test is working correctly.
-
+usernames = []
+if usernames:
+    for user in usernames:
+        if user == "admin":
+            print(f"{user.title()}, welcome to the control panel dashboard.")
+        else:
+            print(f"Hello {user}, Thanks for signing in.")
+else:
+    print("We need some Users!")
 
 # Exercise 5-10 Checking Usernames - Make sure everyone has a unique username. Make a list of 5 users called current_users.
 # make another list called new_users. Make sure 1 name matches.  loop thru new_users to print that the duplicate will need to make
 # a new username.
-
+current_users = ["dimitri", "admin", "emily", "john", "brian", "ronnie"]
+new_users = ['people', 'bartz', 'cloud', 'squall', 'admin']
+for user in new_users:
+    if user in current_users:
+        print(f"You need a new username: {user}")
+    else:
+        print("good username")
 
 # Exercise 5-11 Ordinal Numbers - Ordinal Numbers - Ordinal numbers indicate their position in a list, such as 1st or 2nd. Most 
 # ordinal numbers end in th, except 1,2, and 3.  Store numbers 1-9 in a list.  loop through list.  use an if-elif-else chain in the
 # loop to print the proper ending for each number.  each number on a separate line.
+num_list = list(range(1,10))
+print(num_list)
+for nums in num_list:
+    if nums == 1:
+        print(f"{str(nums)}st")
+    elif nums == 2:
+        print(f"{str(nums)}nd")
+    elif nums == 3:
+        print(f"{str(nums)}rd")
+    else:
+        print(f"{str(nums)}th")
