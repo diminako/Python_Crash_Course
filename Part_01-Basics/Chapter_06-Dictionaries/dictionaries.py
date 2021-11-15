@@ -32,10 +32,12 @@ alien_0 = {
     'speed': 'medium'
 }
 print(f"Original X position: {alien_0['x_position']}")
-print(f"Original Y position: {alien_0['y_position']}")
+# print(f"Original Y position: {alien_0['y_position']}")
 
 #  Move the alien to the right
 #  Determine how far to more the alin based on it's current speed
+alien_0['speed'] = 'fast'
+
 if alien_0['speed'] == 'slow':
     x_increment = 1
 elif alien_0['speed'] == 'medium':
@@ -47,4 +49,28 @@ else:
 alien_0['x_position'] = alien_0['x_position'] + x_increment
 
 print(f'New position: {alien_0["x_position"]}')
+
+# Removing key-value pairs.
+alien_0 = {
+    'color': 'green',
+    'points': 5
+}
+
+del alien_0['points']
+print(alien_0)
+alien_0['points'] = 5
+print(alien_0)
+
+# A dictionary of similar objects.
+favorite_languages = {
+    'dimitri': 'javascript',
+    'emily': 'ruby',
+    'john': 'c',
+    'brian': 'sql',
+}
+
+language = favorite_languages['dimitri'].title()
+print(f"Dimitri's favorite language is: {language}")
+
+# using get() to Access Values
 
