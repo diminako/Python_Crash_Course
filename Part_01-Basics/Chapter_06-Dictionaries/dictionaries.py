@@ -72,5 +72,11 @@ favorite_languages = {
 language = favorite_languages['dimitri'].title()
 print(f"Dimitri's favorite language is: {language}")
 
-# using get() to Access Values
+# using get() to Access Values (helps prevent error messages by providing a backup value if no value is assigned for that key)
+print(favorite_languages.get('dimitri', "No value assigned"))
+print(favorite_languages.get('edward', "No value assigned"))
+print(favorite_languages.get('edward')) #  Not assigning a value to the backup value with return None "No value exists"
+
+
+
 
