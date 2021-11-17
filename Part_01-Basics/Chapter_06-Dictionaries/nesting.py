@@ -44,3 +44,37 @@ print(f"You ordered a {pizza['crust']}-crust pizza. With the following toppings:
 for topping in pizza['toppings']:
     print(f'\t{topping}')
 
+
+fav_langs = {
+    'john': ['python', 'ruby'],
+    'dimitri': ['python'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskel'],
+}
+for name, langs in fav_langs.items():
+    print(f"\n{name.title()}'s favorite languages are:")
+    for lang in langs:
+        print(f"\t{lang.title()}")
+
+# A dictionary in a dictionary
+users = {
+    'dnakos': {
+        'first': 'dimitri',
+        'last': 'nakos',
+        'location': 'charlotte',
+    },
+    'jchi': {
+        'first': 'john',
+        'last': 'chi',
+        'location': 'monroe',
+    }
+}
+
+for username, user_info in users.items():
+    print(f"\nUsername:  {username}")
+    full_name = (f"{user_info['first']} {user_info['last']}")
+    location = user_info['location']
+
+    print(f"\tFull nume:  {full_name.title()}")
+    print(f"\tLocation:  {location.title()}")
+
