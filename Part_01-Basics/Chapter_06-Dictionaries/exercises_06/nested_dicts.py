@@ -90,4 +90,13 @@ cities = {
 }
 for city, city_info in cities.items():
     print(f"{city.title()} is in {city_info.get('country')}.  It has a population of {city_info.get('population')} and {city_info.get('fact')}.")
-# Exercise 6-12
+
+# Exercise 6-12 Extensions - change an or extend one of the previous exercises.
+cities['wilmington'] = {
+    'country': 'usa',
+    'population': 500_000,
+    'fact': 'nice city.'
+}
+print(cities)
+del cities['wilmington']
+print(cities)
