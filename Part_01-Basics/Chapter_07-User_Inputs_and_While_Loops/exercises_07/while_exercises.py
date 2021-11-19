@@ -57,3 +57,4 @@ while number <= 10: # Conditional exit
 # number = 0
 # while number < 5:
 #     print("never gonna give you up")  # Number will never increment past 0 without a way for it to increase so this loop will run forever.
+
