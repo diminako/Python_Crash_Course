@@ -29,3 +29,25 @@ def describe_city(city, country):
 describe_city('Athens', 'Greece')
 describe_city('Thessaloniki', 'Greece')
 describe_city('Charlotte', country='Greece')
+
+# Exercise 8-6 City Name - make a function called city_country() that takes in the name of a city and its country.  The function should return a string formatted like this |"Santiago, Chile"|  Call your function with at least three city-country pairs, and print the values that are returned.
+def city_country(city, country):
+    location = f'{city.title()}, {country.title()}'
+    return location
+
+print(city_country('charlotte', 'USA'))
+print(city_country('athens', 'greece'))
+print(city_country('raleigh', 'USA'))
+
+# Exercise 8-7 Album - write a function called make_album() that builds a dictionary describing a music album.  the function should take in an artist name and an album title, and it should return a dictionary containing these two pieces of information.  Use the function to make three dictionaries representing different albums.  Print each return value to show that the dictionaries are storing the album information correctly.  Use None to add an optional parameter to make_album() that allows you to store the number of songs on an album.  If calling line includes a value for the number of songs, add that value to the album's dictionary.  Make at least one new function call that includes the number of songs on an album.
+def make_album(artist_name, album_title, tracks=None):
+    if tracks:
+        music_album = {'artist': artist_name, 'album': album_title, 'tracks': tracks}
+    else:
+        music_album = {'artist': artist_name, 'album': album_title}
+    return music_album
+
+print(make_album())
+print(make_album())
+print(make_album())
+# Exercise 8-8 User Album - Start you program from exercise 8-7 write a while loop that allows users to enter an album's artist and title.  Once you have that information, call make_album() with the user;s input and print the dictionary that's created.  Be sure to include a quit value in the while loop.
