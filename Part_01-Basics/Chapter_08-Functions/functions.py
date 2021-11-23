@@ -90,10 +90,65 @@ while True:
     f_name = input('First Name: ')
     if f_name == 'q':
         break
+    else:
+        formatted_name = get_formatted_name(f_name, l_name)
+        print(f"\nHello, {formatted_name}!")
+
     l_name = input('Last Name: ')
     if l_name == 'q':
         break
-    
-    formatted_name = get_formatted_name(f_name, l_name)
-    print(f"\nHello, {formatted_name}!")
+    else:
+        formatted_name = get_formatted_name(f_name, l_name)
+        print(f"\nHello, {formatted_name}!")
+
+
+# Passing a List
+def greet_users(names):
+    for name in names:
+        msg = f'Hello, {name.title()}!'
+        print(msg)
+
+usernames = ['hannah', 'ty', 'margot']
+greet_users(usernames)
+
+# Modifying a List in a function
+# start with some designs tht need to be printed
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_designs = []
+
+# simulate printing each design, until none are left.
+# move each design to completed_designs after printing.
+while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    print(f'Printing model: {current_design}')
+    completed_designs.append(current_design)
+
+print('\nThe following models have been printed: ')
+for design in completed_designs:
+    print(design)
+
+# Another way to organize this code.
+def print_models(unprinted_designs, completed_models):
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
+
+def show_completed_models(completed_models):
+    print("\nThe following models have been printed: ")
+    for completed_model in completed_models:
+        print(completed_model)
+
+unprinted_designs = ['NES', 'SNES', 'GBA']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+
+# Preventing a function from modifying a List
+unprinted_designs = ['NES', 'SNES', 'GBA']
+completed_models = []
+print_models(unprinted_designs[:], completed_models)  # This would allow you to create a list off of the old one without changing the old list.
+show_completed_models(completed_models)
+
 

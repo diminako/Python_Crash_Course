@@ -47,7 +47,70 @@ def make_album(artist_name, album_title, tracks=None):
         music_album = {'artist': artist_name, 'album': album_title}
     return music_album
 
-print(make_album())
-print(make_album())
-print(make_album())
+print(make_album('Jimi Hendrix', 'Purple haze', 5))
+print(make_album('Gorillaz', 'Gorillaz'))
+print(make_album('Eminem', 'Marshal Mathers LP', 12))
+
 # Exercise 8-8 User Album - Start you program from exercise 8-7 write a while loop that allows users to enter an album's artist and title.  Once you have that information, call make_album() with the user;s input and print the dictionary that's created.  Be sure to include a quit value in the while loop.
+active = True
+
+while active:
+    print("Enter the information below... or enter q to quit at any moment...")
+    artist = input("Who is the artist? ")
+    album = input("What is the album? ")
+    tracks = input("How many tracks are on the album? ")
+    if artist == 'q' or album == 'q' or tracks == 'q':
+        break
+    tracks = int(tracks)
+    if artist != '' and album != '' and tracks != '':
+        print(make_album(artist, album, tracks))
+        active = False
+
+# Exercise 8-9 Messages - Make a list containing short messages. pass the list to a function called show_messages().  print each message.
+messages = ['lol', 'lmao', 'rofl', 'ttyl']
+
+def show_messages(list):
+    for item in list:
+        print(item)
+
+show_messages(messages)
+
+# Exercise 8-10 Sending messages - start with a copy of exercise 8-9 write a function called send_messages() that prints each text message and moves each message to a new list called sent message as it's printed.  after the function print both lists to see what is in them.
+def send_messages(messages, sent_messages):
+    while messages:
+        current_message = messages.pop()
+        print(f"sending text: {current_message}")
+        sent_messages.append(current_message)
+
+def show_messages(list):
+    for item in list:
+        print(item)
+
+messages = ['lol', 'lmao', 'rofl', 'ttyl']
+sent_messages = []
+
+send_messages(messages, sent_messages)
+show_messages(sent_messages)
+
+print(messages)
+print(sent_messages)
+
+# Exercise 8-11 Archived Messages - Start with your work from Exercise 8-10.  call the function send_messages() with a copy of the list of messages.  print the lists to check if it worked correctly.
+def send_messages(messages, sent_messages):
+    while messages:
+        current_message = messages.pop()
+        print(f"sending text: {current_message}")
+        sent_messages.append(current_message)
+
+def show_messages(list):
+    for item in list:
+        print(item)
+
+messages = ['lol', 'lmao', 'rofl', 'ttyl']
+sent_messages = []
+
+send_messages(messages[:], sent_messages)
+show_messages(sent_messages)
+
+print(messages)
+print(sent_messages)
