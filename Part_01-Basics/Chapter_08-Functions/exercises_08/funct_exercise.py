@@ -114,3 +114,41 @@ show_messages(sent_messages)
 
 print(messages)
 print(sent_messages)
+
+# Exercise 8-12 Sandwiches - write a funct that accepts a list of items a person wants on a sandwich.  the funct should accept a parameter that can be any number of items. print the orders.  call it three times with diff ingredients.
+def sandwich_order(*toppings):
+    print('\nOne sandwich coming up with these ingredients:')
+    for topping in toppings:
+        print(f"{topping}")
+
+sandwich_order('mayo', 'mustard', 'turkey')
+sandwich_order('cheese', 'ham')
+sandwich_order('bacon')
+
+# Exercise 8-13 User Profile - start with a copy of user_profile on page 149. Build a profile yourself by calling build_profile().  using your first and last names and three other key value pairs that describe you.
+def build_profile(first, last, **user_info):
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+
+user_profile = build_profile(
+    'dimitri', 'nakos',
+    location = 'charlotte',
+    field = 'python',
+    genre = 'rpgs',)
+
+print(user_profile)
+
+# Exercise 8-14 Cars - write a function that stores information about a car in a dictionary.  the function should always receive a manufacturer and a model name.  it should then accept an arbitrary number of keyword arguments.  call the function with the required information and two other name-value pairs, such as a color or an optional feature.  your function should work fora call like this one:  car = make_car('subaru', 'outback', color='blue', tow_package=True) print the dictionary that's retrned to make sure all the information was stored correctly.
+def make_car(make, model, **car_info):
+    car_info['make'] = make
+    car_info['model'] = model
+    return car_info
+
+built_car = make_car(
+    'Toyota', 'Tacoma',
+    color = 'green',
+    trd_package = True
+)
+
+print(built_car)
