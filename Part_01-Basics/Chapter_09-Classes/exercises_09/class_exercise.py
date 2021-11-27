@@ -120,3 +120,114 @@ print(dimitri.login_attempts)
 dimitri.reset_login_attempts()
 print(dimitri.login_attempts)
 
+# Exercise 9-6 Ice Cream Stand - An ice cream stand is a specific kind of restaurant.  Write a class called IceCreamStand that inherits from the restaurant class you wrote in Exercise 9-1 or 9-4.  Add an attribute called flavors that stores a list of ice cream flavors.  write a method that displays these flavors.  create an Instance of IceCreamStand and call this method.
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine):
+        self.restaurant_name = restaurant_name
+        self.cuisine = cuisine
+    
+    def describe_restaurant(self):
+        print(f"{self.restaurant_name.title()} has {self.cuisine}.")
+
+    def open_restaurant(self):
+        print(f"{self.restaurant_name.title()} is now open!")
+
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine):
+        super().__init__(restaurant_name, cuisine)
+        self.flavors = ['vanilla', 'chocolate', 'mint']
+
+    def flavors_available(self):
+        for flavor in self.flavors:
+            print(f'{flavor}')
+
+ritas = IceCreamStand('ritas', 'ice cream')
+ritas.flavors_available()
+
+# Exercise 9-7 Admin - An administrator is a special kind of User.  Write a class called Admin that inherits from the User class you wrote in 9-3 or 9-5.  Add an attribute, privileges, that store a list of string like 'can add post', ' can delete post' , 'can ban user', and so on.  write a method to show_privileges() that lists the administrators set of privileges.  Create an instance of Admin and call your method.
+# Exercise 9-8 make privileges an instance of attributes.
+class User:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+class Admin(User):
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.privileges = ["can add post", 'can delete post', 'can ban user', 'can create users']
+
+    def show_privileges(self):
+        print(f'{self.first_name.title()} {self.last_name.title()} has the following privileges: ')
+        for privilege in self.privileges:
+            print(f"{privilege}.")
+
+
+
+dimitri = Admin('dimitri', 'nakos')
+dimitri.show_privileges()
+
+# Exercise 9-9 Battery Upgrade - Use the final version of electric car from this chapter.  Add a method to the Battery class called upgrade_battery() This method should check the battery size and set the capacity to 100 if it isn't already.  then call get_range() a second time after upgrading the battery you should see an increase to the car's range.
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        long_name = f'{self.year} {self.make} {self.model}'
+        return long_name
+
+    def read_odometer(self):
+        print(f'This car has {self.odometer_reading} miles on it.')
+
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print('You can\'t roll back an odometer!')
+
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
+
+    def fill_gas_tank(self):
+        print("Filling the gas tank.")
+
+class Battery:
+    def __init__(self, battery_size=75):
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        print(f'This car has a {self.battery_size}-kWh battery.')
+
+    def charge_battery(self):
+        print("Charging the electric battery.")
+
+    def fill_gas_tank(self):
+        print("This vehicle has no gas tank.")
+        self.charge_battery()
+    
+    def upgrade_battery(self):
+        if self.battery_size == 75:
+            self.battery_size = 100
+            print(f'This car\'s battery has been upgraded to {self.battery_size}-kWh.')
+
+    def get_range(self):
+        if self.battery_size == 75:
+            range = 260
+        elif self.battery_size == 100:
+            range = 315
+
+        print(f'This car can go about {range} miles on a full charge.')
+
+class Electric(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+
+dimis_tesla = Electric('tesla', 'model s', 2019)
+
+dimis_tesla.battery.get_range()
+dimis_tesla.battery.upgrade_battery()
+dimis_tesla.battery.get_range()
