@@ -22,3 +22,11 @@ my_beetle = base_car.Car('Volkswagen', 'beetle', 1974)
 dimis_tesla = base_car.Electric('tesla', 'model s', 2019)
 print(my_beetle.get_descriptive_name())
 print(dimis_tesla.get_descriptive_name())
+
+# Importing all classes from a module.
+from base_car import *
+
+# Using aliases
+from base_car import Car as CarBuild
+from base_car import Electric as EVBuild
+
