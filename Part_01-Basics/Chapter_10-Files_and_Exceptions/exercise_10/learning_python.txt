@@ -1,0 +1,4 @@
+in python you can store variables.
+in python you can loop easily.
+in python you can program.
+in python you can manipulate objects.
