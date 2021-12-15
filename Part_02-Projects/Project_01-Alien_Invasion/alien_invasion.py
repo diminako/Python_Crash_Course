@@ -12,32 +12,33 @@ class AlienInvasion:
         pygame.init()
         # calling the settings from settings.py to be able to be used in self.settings
         self.settings = Settings()
-
         # Screen size parameters set by the settings pages.
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height)
         )
-
         # The title displayed
         pygame.display.set_caption("Alien Invasion")
-
+        # Initiate the ship class when Alien Invasion initiates.
         self.ship = Ship(self)
 
     def run_game(self):
         '''Start the main loop for the game.'''
         while True:
-            # Watch for keyboard and mouse events.
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+            self._check_events()
+            self._update_screen()
 
-            # Redraw the screen during each pass through the loop.  Pulled info from settings.
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
-            
-            # Make the most recently drawn screen visible.
-            pygame.display.flip()
+    def _check_events(self):
+        # Respond to keyboard and mouse events.
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
 
+    def _update_screen(self):
+        # Redraw the screen during each pass through the loop.  Pulled info from settings.
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme()
+        # Make the most recently drawn screen visible.
+        pygame.display.flip()
 
 if __name__ == '__main__':
     # Make a game instance, and run the game.
